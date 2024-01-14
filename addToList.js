@@ -13,7 +13,9 @@ async function search(){
     console.log(data);
     if(response.ok){
         document.getElementById("result").innerHTML = data.Title + "<br>" + data.Year;
-        addNewItem(data.Title);       
+        if(data.Title != undefined){
+            addNewItem(data.Title)
+        };       
     }
 
 }
